@@ -1,0 +1,389 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="title" content="Breaking News — CNN">
+  <meta name="description" content="Players across the gaming community were thrown into confusion today after an unusual announcement was made regarding the popular online game ROBLOX. Their CEO was reportedly found dead, and the company announced that all ROBLOX games would be shut down the following day.">
+  <meta name="author" content="Chip Chipson, Biff Biffwell">
+
+  <title>Breaking News — CNN</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #eee;
+      color: #111;
+    }
+
+    header {
+      background: #c00;
+      color: white;
+      padding: 14px 16px;
+      border-bottom: 4px solid #900;
+    }
+
+    .brand {
+      font-size: 35px;
+      font-weight: 900;
+      letter-spacing: -2px;
+    }
+
+    .date {
+      font-size: 11px;
+      margin-top: 3px;
+      opacity: .9;
+    }
+
+    nav {
+      background: #111;
+      color: white;
+      padding: 11px 12px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    nav span {
+      font-size: 13px;
+      font-weight: bold;
+      margin-right: 22px;
+    }
+
+    .ticker {
+      background: white;
+      border-bottom: 1px solid #ccc;
+      padding: 10px 12px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .ticker strong {
+      color: #c00;
+      margin-right: 10px;
+    }
+
+    .ticker-text {
+      display: inline-block;
+      animation: ticker 14s linear infinite;
+    }
+
+    @keyframes ticker {
+      from {
+        transform: translateX(100%);
+      }
+
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    main {
+      max-width: 850px;
+      margin: auto;
+      background: white;
+      min-height: 100vh;
+    }
+
+    .content {
+      padding: 18px 15px 50px;
+    }
+
+    .breaking {
+      color: #c00;
+      font-size: 14px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: clamp(31px, 8vw, 54px);
+      line-height: .98;
+      letter-spacing: -1.8px;
+      margin-bottom: 15px;
+    }
+
+    .subheadline {
+      color: #555;
+      font-size: 17px;
+      line-height: 1.4;
+      margin-bottom: 18px;
+    }
+
+    .hero {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background:
+        linear-gradient(
+          135deg,
+          #111 0%,
+          #333 45%,
+          #c00 45%,
+          #900 100%
+        );
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 14px;
+    }
+
+    .hero::before {
+      content: "CNN";
+      position: absolute;
+      font-size: 13vw;
+      font-weight: 900;
+      opacity: .08;
+      transform: rotate(-12deg);
+    }
+
+    .hero-text {
+      position: relative;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero-text .cube {
+      font-size: 55px;
+    }
+
+    .hero-text h2 {
+      font-size: clamp(28px, 7vw, 48px);
+      margin-top: 5px;
+    }
+
+    .caption {
+      color: #777;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    .article {
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    .article p {
+      margin-bottom: 17px;
+    }
+
+    .quote {
+      border-left: 5px solid #c00;
+      padding: 10px 14px;
+      background: #f2f2f2;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    .prank-card {
+      background: #111;
+      color: white;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .prank-card h2 {
+      color: #ffd400;
+      margin-bottom: 8px;
+    }
+
+    .prank-card p {
+      margin-bottom: 15px;
+    }
+
+    button {
+      border: 0;
+      background: #c00;
+      color: white;
+      padding: 13px 20px;
+      border-radius: 4px;
+      font-weight: 900;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    button:active {
+      transform: scale(.97);
+    }
+
+    footer {
+      background: #111;
+      color: #777;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .brand {
+        font-size: 30px;
+      }
+
+      .content {
+        padding: 15px 13px 40px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .subheadline {
+        font-size: 16px;
+      }
+
+      .article {
+        font-size: 16px;
+      }
+
+      .hero {
+        aspect-ratio: 4 / 3;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="brand">CNN</div>
+    <div class="date" id="date"></div>
+  </header>
+
+  <nav>
+    <span>BREAKING</span>
+    <span>GAMING</span>
+    <span>TECH</span>
+    <span>ENTERTAINMENT</span>
+    <span>WORLD</span>
+  </nav>
+
+  <div class="ticker">
+    <strong>BREAKING:</strong>
+
+    <span class="ticker-text">
+      major gaming news sends players into chaos — details below
+    </span>
+  </div>
+
+  <main>
+    <section class="content">
+
+      <div class="breaking">
+        BREAKING NEWS
+      </div>
+
+      <h1>
+        ROBLOX EXECUTIVE OFFICER FOUND DEAD, COMPANY ANNOUNCES SHUTDOWN OF ALL GAMES
+      </h1>
+
+      <p class="subheadline">
+        Story by Chip Chipson, Executive Gaming Correspondent at CNN and Biff Biffwell, Senior Gaming Analyst  at CNN.
+      </p>
+
+      <div class="hero">
+        <div class="hero-text">
+          <div class="cube">▣</div>
+          <h2>GAMING CHAOS</h2>
+        </div>
+      </div>
+
+      <div class="caption">
+        BNN Gaming Desk
+      </div>
+
+      <article class="article">
+
+        <p>
+          Players across the gaming community were thrown into confusion
+          today after an unusual announcement was made regarding the popular 
+          online game ROBLOX. Their CEO was reportedly found dead, and the 
+          company announced that all ROBLOX games would be shut down the following day.
+        </p>
+
+        <p>
+          Thousands of players began discussing the supposed announcement, 
+          with social media quickly filling with reactions and speculation.
+          The ROBLOX press office also released a statement regarding the situation, 
+          confirming that the CEO had indeed passed away, and that the company would 
+          be shutting down all games permanently to mourn his loss. Below is the statement
+          from the office of the ROBLOX spokesperson, which was released to the public earlier today.
+        </p>
+
+        <div class="quote">
+          "It is with profound sadness that we confirm the passing of our Chief Executive Officer, 
+          who was found deceased at his residence on Friday morning. Our thoughts and deepest 
+          condolences are with his family, friends, colleagues, and everyone affected by this tragic 
+          loss. In light of this devastating event, all ROBLOX games and related services will be shut 
+          down tomorrow. Further information regarding the closure and the future of our operations will 
+          be communicated through our official channels as it becomes available. We are deeply grateful 
+          for the support, trust, and business our community has given us throughout the years. We 
+          understand the significance of this announcement and sincerely appreciate your patience, 
+          understanding, and respect for those affected during this difficult time. Thank you for 
+          being a valued part of our community and for your support over the years."
+        </div>
+
+        <p>
+          The story quickly became one of the most discussed gaming stories of the day, with many players 
+          expressing their grief and confusion over the situation. The executive officer's funeral is
+          scheduled to take place tomorrow, and the company has stated that they will be releasing further 
+          articles and statements regarding the situation as it develops. Many players have expressed their 
+          condolences to the family of the executive officer, and have shared their memories of playing 
+          ROBLOX over the years.
+
+        <!-- <div class="prank-card">
+          <h2>GOTCHA 💀</h2>
+
+          <p>
+            hit the button to reveal the prank.
+          </p>
+
+          <button onclick="revealPrank()">
+            REVEAL
+          </button>
+        </div> -->
+
+      </article>
+
+    </section>
+  </main>
+
+  <footer>
+    All Rights Reserved. 2026.
+    THIS WEBSITE IS INTENDED TO SERVE AS A PRANK. IT IS NOT AFFILIATED WITH CNN OR ANY OF ITS AFFILIATES, OR ROBLOX. ALL CONTENT IS FOR ENTERTAINMENT PURPOSES ONLY.
+    WE RESERVE THE RIGHT TO CHANGE OR REMOVE ANY CONTENT AT ANY TIME WITHOUT NOTICE. BY ACCESSING THIS WEBSITE, YOU AGREE TO THESE TERMS AND CONDITIONS AND NOT TO SUE US.
+  </footer>
+
+  <script>
+    const date = new Date();
+
+    document.getElementById("date").textContent =
+      date.toLocaleDateString("en-US", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+      });
+
+    function revealPrank() {
+      alert(
+        "gotcha 💀\n\n" +
+        "you just got pranked."
+      );
+    }
+  </script>
+
+</body>
+</html>
+```
